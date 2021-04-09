@@ -1,0 +1,36 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:forms="clr-namespace:Lottie.Forms;assembly=Lottie.Forms"
+             x:Class="LottieTest.MainPage">
+
+    <StackLayout>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"></RowDefinition>
+                <RowDefinition Height="*"></RowDefinition>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+            <forms:AnimationView x:Name="animationView" Grid.Row="0"
+                         ImageAssetsFolder="Assets"
+                         AnimationSource="AssetOrBundle"
+                         Animation="sampleAnim.json"
+                         RepeatMode="Restart"
+                         RepeatCount="0"
+                                 
+                         VerticalOptions="FillAndExpand"
+                         HorizontalOptions="FillAndExpand" 
+                         Clicked="Clicked"
+                         OnFinishedAnimation="Finished"/>
+            <Label Grid.Row="1" x:Name="status"
+           Text = "OFF"
+           FontSize="100"
+           VerticalOptions="CenterAndExpand"
+           HorizontalOptions="CenterAndExpand">
+            </Label>
+        </Grid>
+
+    </StackLayout>
+</ContentPage>
